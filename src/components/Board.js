@@ -46,7 +46,6 @@ function Board({result, setResult}) {
           });
     
           if (foundWinningPattern) {
-                alert("Winner", board[currPattern[0]])
             setResult({ winner: board[currPattern[0]], state: "won" });
           }
         });
@@ -60,7 +59,6 @@ function Board({result, setResult}) {
         });
     
         if (filled) {
-            alert("Game is tie")
           setResult({ winner: "none", state: "tie" });
         }
       };
