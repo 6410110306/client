@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Square() {
+function Square({ chooseSquare, val }) {
   return (
-    <div>Square</div>
-  )
+    <div className="square" onClick={chooseSquare}>
+      {val}
+    </div>
+  );
 }
 
-export default Square
+export default Square;
