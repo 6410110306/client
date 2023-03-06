@@ -12,6 +12,7 @@ function Board({result, setResult}) {
     const { client } = useChatContext();
 
     useEffect(() => {
+        checkIfTie();
         checkWin();
       }, [board]);
 
@@ -45,9 +46,23 @@ function Board({result, setResult}) {
           });
     
           if (foundWinningPattern) {
+                alert("Winner", board[currPattern[0]])
             setResult({ winner: board[currPattern[0]], state: "won" });
           }
         });
+      };
+    const checkIfTie = () => {
+        let filled = true;
+        board.forEach((square) => {
+          if (square == "") {
+            filled = false;
+          }
+        });
+    
+        if (filled) {
+            alert("Game is tie")
+          setResult({ winner: "none", state: "tie" });
+        }
       };
     channel.on((event) => {
         if (event.type == "game-move" && event.user.id !== client.userID) {
