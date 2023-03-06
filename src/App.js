@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Login from "./components/Login"
+import SignUp from './components/SignUp';
+import { StreamChat } from "stream-chat";
+import Cookies from "universal-cookie";
 function App() {
+  const api_key = "8rx4u3wc6xjz";
+  const cookies = new Cookies();
+  const token = cookies.get("token");
+  const client = StreamChat.getInstance(api_key);
+  if (token) {
+    client
+      .connectUser(
+        {
+          id: cookies.get("userId"),
+          name: cookies.get("username"),
+          firstName: cookies.get("firstName"),
+          lastName: cookies.get("lastName"),
+          hashedPassword: cookies.get("hashedPassword"),
+        },
+        token
+      )
+      .then((user) => {
+        console.log(user)
+      });
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SignUp />
+      <Login />
     </div>
   );
 }
