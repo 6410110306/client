@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  
+
 }
 
 .App {
@@ -8,7 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #76a2ff;
+  background-color: #769eda; 
+
 }
 
 body {
@@ -20,7 +23,9 @@ body {
 .signUp {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 50px;
+  font-family: 'cursive';
+  font-weight: 700;
 }
 
 .login input,
@@ -28,7 +33,7 @@ body {
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 20px;
   width: 300px;
   height: 30px;
 }
@@ -36,20 +41,23 @@ body {
 .login button,
 .signUp button {
   margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #00ff9d;
+  border-radius: 20px;
   width: 320px;
   height: 30px;
   cursor: pointer;
+  background-color: #e4d02e;
+  font-weight: 900;
+  font-family: 'cursive';
 }
 
 .login label,
 .signUp label {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  color: white;
+  font-family: cursive;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
 }
 
 .board {
@@ -74,7 +82,7 @@ body {
   cursor: pointer;
   display: grid;
   place-items: center;
-  font-size: 30px;
+  font-size: 70px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -84,23 +92,24 @@ body {
 }
 
 h4 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: cursive;
   color: white;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .joinGame input {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 220px;
+  border-radius: 30px;
+  width: 200px;
   height: 30px;
 }
 .joinGame button {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 5px solid #a39e9e;
+  border-radius: 30px;
   width: 220px;
   height: 51px;
   cursor: pointer;
 }
+
