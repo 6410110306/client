@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
+import Card from '@mui/material/Card';
 
 function Login({ setIsAuth }) {
   const [username, setUsername] = useState("");
@@ -20,11 +21,14 @@ function Login({ setIsAuth }) {
       cookies.set("lastName", lastName);
       setIsAuth(true);
     });
+    
   };
   return (
-    <div className="login">
+  
+    <div id="card" className="login">
+      
       <label> Log in</label>
-
+      <Card>
       <input
         placeholder="Username"
         onChange={(event) => {
@@ -39,7 +43,11 @@ function Login({ setIsAuth }) {
         }}
       />
       <button onClick={login}> Login</button>
+      </Card>
     </div>
+    
+
+        
   );
 }
 
